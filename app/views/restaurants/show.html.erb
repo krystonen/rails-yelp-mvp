@@ -1,0 +1,16 @@
+<h2>Show page</h2>
+<div class = "form">
+
+<p>Name: <%= @restaurant.name %></p>
+<p>Address: <%= @restaurant.address %></p>
+<p>Phone Number: <%= @restaurant.phone_number %></p>
+<p>Category: <%= @restaurant.category %></p>
+<h3>Reviews: </h3>
+
+<p>
+  <% @restaurant.reviews.each do |restaurant| %>
+    <p> <%= restaurant.rating %> : <%= restaurant.content %> </p>
+  <% end %>
+</p>
+</div>
+<p class="link"> <%= link_to "Add a new review",  new_restaurant_review_path(@restaurant)  %> </p>
